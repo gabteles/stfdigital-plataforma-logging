@@ -1,0 +1,14 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - "/logs/*/*.log"
+      input_type: log
+      document_type: spring_json
+output:
+  logstash:
+    hosts: ["elk:5044"]
+shipper:
+logging:
+  files:
+    rotateeverybytes: 10485760 # = 10MB
