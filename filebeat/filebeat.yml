@@ -8,6 +8,7 @@ filebeat:
 output:
   logstash:
     hosts: ["elk:5044"]
+    index: logstash
 shipper:
 logging:
   files:

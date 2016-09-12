@@ -18,5 +18,5 @@ ext.dockerImageTag = project.hasProperty('dockerImageTag') ? project.getProperty
 docker {
     name dockerImageName + (dockerImageTag ? ':' + dockerImageTag : '')
     dockerfile 'Dockerfile'
-    files '02-beats-input.conf'
+    files 'kibana.json', 'start-and-load-kibana-data.sh', '02-beats-input.conf', '30-output.conf'
 }
